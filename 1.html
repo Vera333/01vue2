@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="jian()">-</button><input type="text" v-model="count"><button @click="add()">+</button>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                count:'1'
+            }
+        },
+        methods:{
+            add(){
+                this.count ++;
+            },
+            jian()
+            {
+                this.count--;
+            }
+        },
+        watch:{
+            count(){
+                if(this.count<1){
+                    alert("数量为1，不能再减")
+                    this.count=1;
+                }else{
+                    return count;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
